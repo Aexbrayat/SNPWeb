@@ -1,0 +1,48 @@
+{% extends "SNP/base.html" %}
+
+{% load staticfiles %}
+
+{% block head %}
+	<title>Contact</title>
+	<link href={% static 'SNP/contact.css' %} media="all" rel="stylesheet" type="text/css" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+{% endblock %}
+
+{% block body %}
+	<header>
+		<a title="SnpWeb : The new powerfull database for SNPs" class="logo"> </a>
+		<img src={% static 'SNP/logo.png' %} alt="Logo SnpWeb" class="logo">
+		<div id="buttonbans"> 
+			<div id="home">
+				<input type="button" class="buttonban" value='Home' title="Return to the general homepage" onClick="javascript:document.location.href='/'" />
+			</div>
+			<div id="contact">	
+				<input type="button" class="buttonban" value='Contact' title="Contact us" onClick="javascript:document.location.href='http://127.0.0.1:8000/contact/'" />
+			</div>
+		</div>
+	</header>
+	
+	<p>For any questions regarding the datas, user permissions or anything else, <br> please contact us using the form below.</p>
+	<div id="form">
+	
+		<form method="post" >
+		{% csrf_token %}
+		{{ form }}
+			<div class="form-actions">
+				<input type="submit" id="show" value = 'Send' title="Click to send the message"/>
+			</div>
+		</form>
+	</div>
+    
+    <script type="text/javascript">
+        var textarea = null;
+        window.addEventListener("load", function() {
+            textarea = window.document.querySelector("textarea");
+            textarea.addEventListener("keypress", function() {
+                if(textarea.scrollTop != 0){
+                    textarea.style.height = textarea.scrollHeight + "px";
+                }
+            }, false);
+        }, false);
+    </script>	
+{% endblock %}

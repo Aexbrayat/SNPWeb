@@ -1,0 +1,75 @@
+{% extends "SNP/base.html" %}
+
+{% load staticfiles %}
+
+{% block head %}
+	<title>SNPWeb User Home Page</title>
+	<link href={% static 'SNP/userhome.css' %} media="all" rel="stylesheet" type="text/css" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+{% endblock %}
+
+{% block body %}
+	<header>
+		<a title="SnpWeb : The new powerfull database for SNPs" class="logo"> </a>
+		<img src={% static 'SNP/logo.png' %} alt="Logo SnpWeb" class="logo">
+			
+		<div id="buttonbans"> 
+			<div id="home">
+				<input type="button" class="buttonban" value='Home' title="User homepage" onClick="javascript:document.location.href='http://127.0.0.1:8000/userhomepage/'"/>
+			</div>
+			<div id="allsnp">
+				<input type="button" class="buttonban" value='All Snp' title="View all SNPs informations" onClick="javascript:document.location.href='http://127.0.0.1:8000/allsnp/'" />
+			</div>
+			<div id="trait">	
+				<input type="button" class="buttonban" value='Trait' title="View all SNPs's trait" onClick="javascript:document.location.href='http://127.0.0.1:8000/trait/'" />
+			</div>
+			<div id="contact">	
+				<input type="button" class="buttonban" value='Contact' title="Contact us" onClick="javascript:document.location.href='http://127.0.0.1:8000/contactlog/'" />
+			</div>
+		</div>
+		<div id="loguser">
+			<div id="logout">
+				<input type="button" class="logout" value='Logout' title="Click to logout" onClick="javascript:document.location.href='http://127.0.0.1:8000/logoutchoice/'" />
+			</div>
+			<div id="username">
+				<h1>User connected : {{full_name}} </h1>
+				<div id="tictac"></div>
+			</div>
+		</div>
+	</header>
+	
+	<div id="presentation_text">
+		<p> SNPWeb is a database of genetics and genomics dataf associated to a web-interface.
+			<br> The database contains multiple types of traits and their associated SNP.
+			<br> Some annotations about SNP are stored in our database, and more detailled informations can be found with the references.</p>
+		<ul>
+			<li>The "Trait" section shows all the traits associated to SNPs stored in our database.</li>
+			<li>The "All Snp" section shows all the SNPs Stored in our databases, with their informations.</li>
+			<li>You can contact us with the "Contact" section.</li>
+		</ul> 
+	</div>
+	
+	<footer>
+		<h2>
+			This project has been developped at the University of Marseilles, by Antòni EXBRAYAT and Christopher CHEVALLIER.
+		</h2>
+	</footer>
+	
+	<script type="text/javascript">
+
+		function GetClock(){
+		var d=new Date();
+		var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds();
+		if(nmin<=9) nmin="0"+nmin
+		if(nsec<=9) nsec="0"+nsec;
+
+		document.getElementById('tictac').innerHTML=""+nhour+":"+nmin+":"+nsec+"";
+		}
+
+		window.onload=function(){
+		GetClock();
+		setInterval(GetClock,1000);
+		}
+	</script>	
+
+{% endblock %}

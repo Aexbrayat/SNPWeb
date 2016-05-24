@@ -1,0 +1,114 @@
+html{
+height:100%
+}
+
+body {
+	color: black;
+	background-color: black;
+	background-image:url(back.png);
+	background-size: cover;
+	background-attachment:fixed;
+	min-height:100%;
+	margin: 0px;
+}
+
+header {
+	display: table-cell;
+    position: fixed;
+   	z-index: 2000000000;
+   	top: 0;
+   	left: 0;
+   	height: 137px;
+	background-image:url(banniere.png);  
+	width:100%; 
+}
+
+img {
+	position:relative;
+	display:block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 220px;
+   	height: 137px;
+}
+
+.buttonban {
+	-moz-box-shadow:inset 0px 0px 18px 3px #575457;
+	-webkit-box-shadow:inset 0px 0px 18px 3px #575457;
+	box-shadow:inset 0px 0px 18px 3px #575457;
+	background-color:#6c6c6c;
+	border:1px solid #6c6c6c;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	text-decoration:none;
+	width: 125px;
+	height: 73px;
+	text-align: center;
+	text-shadow:2px 3px 2px #292729;
+}
+.buttonban:hover {
+	background-color:#545354;
+	color:#6c6c6c;
+}
+#buttonbans{
+	position:absolute;
+	display:block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	top: 0px;
+}
+
+#home {
+	position:relative;
+	display:inline-block;
+	float:left;
+	margin-left: auto;
+	margin-right: -6px;
+}
+
+
+
+
+#contact{
+	position:relative;
+	display:inline-block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#register{
+	position:relative;
+	display:inline-block;
+	margin-left: auto;
+	margin-right: 20px;
+	float: right;
+}
+
+.signup {
+	background-color:#6c6c6c;
+	border:1px solid #6c6c6c;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	text-decoration:none;
+	width: 125px;
+	height: 70px;
+	text-align: center;
+	text-shadow:2px 3px 2px #292729;
+}
+.signup:hover {
+	color:#6c6c6c;
+}
+
+#tictac{
+	position:absolute;
+	bottom:0px;
+	text-align:center;
+	width: 100%;
+}

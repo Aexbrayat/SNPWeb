@@ -1,0 +1,28 @@
+{% extends "SNP/base.html" %}
+
+{% load staticfiles %}
+
+{% block head %}
+	<title>Invalid account</title>
+	<link href={% static 'SNP/home.css' %} media="all" rel="stylesheet" type="text/css" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+{% endblock %}
+
+{% block body %}
+	<header>
+		<a title="SnpWeb : The new powerfull database for SNPs" class="logo"> </a>
+		<img src={% static 'SNP/logo.png' %} alt="Logo SnpWeb" class="logo">
+	</header>
+<div id="fenetre_alert">
+<script>
+	
+ {
+       alert("Login/password combinaison is invalid.\n\nClick ok to try again");
+       document.location.href ="/login/";
+   }
+	
+</script>
+</div>
+
+{% endblock %}

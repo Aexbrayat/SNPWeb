@@ -1,0 +1,52 @@
+{% extends "SNP/base.html" %}
+
+{% load staticfiles %}
+
+{% block head %}
+	<title>Logout ?</title>
+	<link href={% static 'SNP/logoutchoice.css' %} media="all" rel="stylesheet" type="text/css" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+{% endblock %}
+
+{% block body %}
+	<header>
+		<a title="SnpWeb : The new powerfull database for SNPs" class="logo"> </a>
+		<img id='logo' src={% static 'SNP/logo.png' %} alt="Logo SnpWeb" class="logo">
+			
+		<div id="buttonbans"> 
+			<div id="home">
+				<input type="button" class="buttonban" value='Home' title="User homepage"/>
+			</div>
+			<div id="allsnp">
+				<input type="button" class="buttonban" value='All Snp' />
+			</div>
+			<div id="trait">	
+				<input type="button" class="buttonban" value='Trait' />
+			</div>
+			<div id="contact">	
+				<input type="button" class="buttonban" value='Contact'/>
+			</div>
+		</div>
+		<div id="loguser">
+			<div id="logout">
+				<input type="button" class="logout" value='Logout'/>
+			</div>
+		</div>
+	</header>	
+	<div id="popup">
+		
+		<p>Do you really want to disconnect ?</p>
+		<img id="logoutimg" src={% static 'SNP/logout.png' %} alt="Logo SnpWeb" class="logo">
+		
+		<div id="bout">
+			
+			<div id="Yes">
+				<input type="button" class="bout" value='Yes' title="Logout" onClick="javascript:document.location.href='http://127.0.0.1:8000/logout/'" />
+			</div>
+			
+			<div id="No">
+				<input type="button" class="bout" value='No' title="Logout" onclick="javascript:history.back()" />
+			</div>
+		</div>
+	</div>
+{% endblock %}

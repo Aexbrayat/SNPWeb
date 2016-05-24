@@ -1,0 +1,78 @@
+{% extends "SNP/base.html" %}
+
+{% load staticfiles %}
+{% block head %}
+	<title>Contact</title>
+	<link href={% static 'SNP/contactlog.css' %} media="all" rel="stylesheet" type="text/css" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+{% endblock %}
+
+{% block body %}
+	<header>
+		<a title="SnpWeb : The new powerfull database for SNPs" class="logo"> </a>
+		<img src={% static 'SNP/logo.png' %} alt="Logo SnpWeb" class="logo">
+		<div id="buttonbans"> 
+			<div id="home">
+				<input type="button" class="buttonban" value='Home' title="User homepage" onClick="javascript:document.location.href='http://127.0.0.1:8000/userhomepage/'"/>
+			</div>
+			<div id="allsnp">
+				<input type="button" class="buttonban" value='All Snp' title="View all SNPs informations" onClick="javascript:document.location.href='http://127.0.0.1:8000/allsnp/'" />
+			</div>
+			<div id="trait">	
+				<input type="button" class="buttonban" value='Trait' title="View all SNPs's trait" onClick="javascript:document.location.href='http://127.0.0.1:8000/trait/'" />
+			</div>
+			<div id="contact">	
+				<input type="button" class="buttonban" value='Contact' title="Contact us" onClick="javascript:document.location.href='http://127.0.0.1:8000/contactlog/'" />
+			</div>
+		</div>
+		<div id="loguser">
+			<div id="logout">
+				<input type="button" class="logout" value='Logout' title="Click to logout" onClick="javascript:document.location.href='http://127.0.0.1:8000/logoutchoice/'" />
+			</div>
+			<div id="username">
+				<h1>User connected : {{full_name}} </h1>
+				<div id="tictac"></div>
+			</div>
+		</div>
+	</header>
+
+	<p>For any questions regarding the datas, user permissions or anything else, </br> please contact us using the form below.</p>
+	<div id="form">
+		<form method="post" >
+		{% csrf_token %}
+		{{ form }}
+			<div class="form-actions">
+				<input type="submit" id="show" value = 'Send' title="Click to send the message"/>
+			</div>
+		</form>
+	</div>    
+    <script type="text/javascript">
+        var textarea = null;
+        window.addEventListener("load", function() {
+            textarea = window.document.querySelector("textarea");
+            textarea.addEventListener("keypress", function() {
+                if(textarea.scrollTop != 0){
+                    textarea.style.height = textarea.scrollHeight + "px";
+                }
+            }, false);
+        }, false);
+    </script>
+    	
+	<script type="text/javascript">
+
+		function GetClock(){
+		var d=new Date();
+		var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds();
+		if(nmin<=9) nmin="0"+nmin
+		if(nsec<=9) nsec="0"+nsec;
+
+		document.getElementById('tictac').innerHTML=""+nhour+":"+nmin+":"+nsec+"";
+		}
+
+		window.onload=function(){
+		GetClock();
+		setInterval(GetClock,1000);
+		}
+	</script>	
+{% endblock %}

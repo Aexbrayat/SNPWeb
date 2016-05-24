@@ -1,0 +1,38 @@
+{% extends "SNP/base.html" %}
+
+{% load staticfiles %}
+
+{% block head %}
+	<title>SNPWeb User Home Page</title>
+	<link href={% static 'SNP/logout.css' %} media="all" rel="stylesheet" type="text/css" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<script language="JavaScript" type="text/javascript">
+	var seconds =0;
+	var url="http://127.0.0.1:8000/";
+
+	function redirect(){
+	if (seconds <=0){
+		window.location = url;
+	}else{
+		seconds--;
+		document.getElementById("timer").innerHTML = seconds
+		setTimeout("redirect()", 1000)
+		}
+	}
+	</script>
+
+{% endblock %}
+
+{% block body %}
+	<header>
+		<a title="SnpWeb : The new powerfull database for SNPs" class="logo"> <a/>
+		<img id='logo' src={% static 'SNP/logo.png' %} alt="Logo SnpWeb" class="logo">
+	</header>
+	
+	<div id="redir">
+		<script>
+			redirect();
+		</script>
+	</div>	
+	
+{% endblock %}

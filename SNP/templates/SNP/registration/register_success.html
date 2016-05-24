@@ -1,0 +1,49 @@
+{% extends "SNP/base.html" %}
+
+{% load staticfiles %}
+
+{% block head %}
+	<title>Login</title>
+	<link href={% static 'SNP/register_success.css' %} media="all" rel="stylesheet" type="text/css" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<script language="JavaScript" type="text/javascript">
+	var seconds =6;
+	var url="http://127.0.0.1:8000/login/";
+
+	function redirect(){
+	if (seconds <=0){
+		window.location = url;
+	}else{
+		seconds--;
+		document.getElementById("timer").innerHTML = seconds
+		setTimeout("redirect()", 1000)
+		}
+	}
+	</script> 
+{% endblock %}
+
+
+{% block body %}
+	
+	<header>
+		<a title="SnpWeb : The new powerfull database for SNPs" class="logo"> </a>
+		<img src={% static 'SNP/logo.png' %} alt="Logo SnpWeb" class="logo">
+		<div id="buttonbans"> 
+			<div id="home">
+				<input type="button" class="buttonban" value='Home' title="Return to the general homepage" onClick="javascript:document.location.href='/'" />
+			</div>
+		</div>
+	</header>
+	<div id="popup">
+		<div id="timer">
+			<script>
+				redirect();
+			</script>
+		</div>
+		<img id="valid" src={% static 'SNP/valid.png' %} alt="Logo SnpWeb" class="logo">
+		<p>Thank you you’ve successfully signed up.<br/>Return to the login page in :</p>
+	</div>
+
+{% endblock %}
+	
+	

@@ -1,0 +1,222 @@
+html{
+height:100%
+}
+
+body {
+	color: black;
+	background-color: black;
+	background-image:url(back.png);
+	background-size: cover;
+	background-attachment:fixed;
+	background-position:center;
+	height:100%;
+	margin: 0px;
+}
+
+header {
+	display: table-cell;
+    position: fixed;
+   	z-index: 2000000000;
+   	top: 0;
+   	left: 0;
+   	height: 137px;
+	background-image:url(banniere.png);  
+	width:100%; 
+}
+
+img {
+	position:relative;
+	display:block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 220px;
+   	height: 137px;
+}
+
+.buttonban {
+	-moz-box-shadow:inset 0px 0px 18px 3px #575457;
+	-webkit-box-shadow:inset 0px 0px 18px 3px #575457;
+	box-shadow:inset 0px 0px 18px 3px #575457;
+	background-color:#6c6c6c;
+	border:1px solid #6c6c6c;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	text-decoration:none;
+	width: 125px;
+	height: 73px;
+	text-align: center;
+	text-shadow:2px 3px 2px #292729;
+}
+.buttonban:hover {
+	background-color:#545354;
+	color:#6c6c6c;
+}
+#buttonbans{
+	position:absolute;
+	display:block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	top: 0px;
+
+}
+
+
+#home {
+	position:relative;
+	display:inline-block;
+	float:left;
+	margin-left: auto;
+	margin-right: -6px;
+}
+
+#trait{
+	position:relative;
+	display:inline-block;
+	float:left;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+
+#allsnp{
+	position:relative;
+	display:inline-block;
+	float:left;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#contact{
+	position:relative;
+	display:inline-block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+.logout{
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24437));
+	background:-moz-linear-gradient(top, #c62d1f 5%, #f24437 100%);
+	background:-webkit-linear-gradient(top, #c62d1f 5%, #f24437 100%);
+	background:-o-linear-gradient(top, #c62d1f 5%, #f24437 100%);
+	background:-ms-linear-gradient(top, #c62d1f 5%, #f24437 100%);
+	background:linear-gradient(to bottom, #c62d1f 5%, #f24437 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24437',GradientType=0);
+	background-color:#c62d1f;
+	-moz-border-radius:18px;
+	-webkit-border-radius:18px;
+	border-radius:18px;
+	border:1px solid #d02718;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	font-weight:bold;
+	padding:7px 25px;
+	text-decoration:none;
+	text-shadow:2px 3px 2px #292729;
+}
+.logout:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f24437), color-stop(1, #c62d1f));
+	background:-moz-linear-gradient(top, #f24437 5%, #c62d1f 100%);
+	background:-webkit-linear-gradient(top, #f24437 5%, #c62d1f 100%);
+	background:-o-linear-gradient(top, #f24437 5%, #c62d1f 100%);
+	background:-ms-linear-gradient(top, #f24437 5%, #c62d1f 100%);
+	background:linear-gradient(to bottom, #f24437 5%, #c62d1f 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24437', endColorstr='#c62d1f',GradientType=0);
+	background-color:#f24437;
+	color: #f24437;
+}
+
+#loguser{
+	width:100px;
+	position:absolute;
+	right:0px;
+	top: 0px;
+	width: 780px;
+	height: 70px;
+	text-align: center;
+}
+h1 {
+	width: 400px;
+	top : 20px;
+	font-family:Arial;
+	font-size:24px;
+	font-weight:bold;
+	text-shadow:2px 3px 2px #292729;
+	color:#ffffff;
+	margin:0px;
+	}
+
+#username {
+	width:400px;
+	height: 70px;
+	top: 5px;
+	position:relative;
+	display:block;
+	float:right;
+	float:bottom;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#logout{
+	position:relative;
+	display:inline-block;
+	float:right;
+	top : 17px;
+	margin-left: 0px;
+	margin-right:20px;
+	width: 125px;
+}
+
+#tictac{
+	position:relative;
+	display:inline-block;
+	width: 100%;
+	font-size:25px;
+	font-weight:bold;
+	font-family:arial;
+	color: #285fa5;
+	top : 5px;
+	bottom:5px;
+	width: 150px;
+	float:top;
+	color: rgba(216,216,216,1);
+	text-align: center;
+	text-transform: normal;
+	-o-text-overflow: clip;
+	text-overflow: clip;
+	white-space: pre;
+	margin:0px;
+	text-shadow: 3px 0 0 rgba(79,79,79,0.5) , -3px 0 0 rgba(79,79,79,0.5) , 0 -3px 0 rgba(79,79,79,0.5) , 0 3px 0 rgba(79,79,79,0.5) 
+}
+
+
+#alltrait {
+	height :100%;
+	margin-top: 160px;
+	margin-left: 20px;
+}
+
+
+li {
+    list-style: none;
+    background-image: url(puce.png);
+    background-repeat: no-repeat;
+    padding-left: 40px; 
+    font-family:Arial;
+	font-size:24px;
+	font-weight:bold;
+}
+h2 {
+	font-weight:bold;	
+	color:#565656;
+	font-family:arial;
+	font-weight:bold;
+	font-size:26px;
+}

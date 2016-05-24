@@ -1,0 +1,54 @@
+{% extends "SNP/base.html" %}
+
+{% load staticfiles %}
+
+{% block head %}
+	<title>Login</title>
+	<link href={% static 'SNP/login.css' %} media="all" rel="stylesheet" type="text/css" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+
+{% endblock %}
+
+{% block body %}
+	<header>
+		<a title="SnpWeb : The new powerfull database for SNPs" class="logo"> </a> 
+		<img src={% static 'SNP/logo.png' %} alt="Logo SnpWeb" class="logo">
+		<div id="buttonbans"> 
+			<div id="home">
+				<input type="button" class="buttonban" value='Home' title="Return to the general homepage" onClick="javascript:document.location.href='/'" />
+			</div>
+			<div id="contact">	
+				<input type="button" class="buttonban" value='Contact' title="Contact us" onClick="javascript:document.location.href='http://127.0.0.1:8000/contact/'" />
+			</div>
+			<div id="register">	
+				<input type="button" class="signup" value='Sign up' title="Click here to sign up" onClick="javascript:document.location.href='http://127.0.0.1:8000/register/'" />
+			</div>
+		</div>
+	</header>	
+
+    {% if form.errors %}
+		<p class = 'error'> Your username and password didn't match. Please try again.</p>
+	{% endif %}
+	<div>
+		<p>To access the datas stored in our database, please make sure you are logged in.
+		<br> You can log you in with the fields bellow. 
+		<br>If you don't have an account yet, please <a id='signup' href="http://127.0.0.1:8000/register/">sign up</a>.</p>
+		<form action='/auth/' method = 'post'> 
+		{% csrf_token %}
+			<div>
+				<label id='user_name' for = 'username'> User name : </label>
+				<input type = 'text' name = 'username' value = '' id = 'username'>
+			</div>
+			<div>
+				<label id='pass_word' for = 'password'> Password : </label>
+				<input type = 'password' name = 'password' value = '' id = 'password'>
+			</div>
+			<div>
+				<input type = 'submit' value = 'Login' title="Click to login"/>
+				<a id='resetpassword' href="http://127.0.0.1:8000/user/password/reset/">Lost your password? </a>
+			</div>
+		</form>
+	</div>
+{% endblock %}
+	
+	

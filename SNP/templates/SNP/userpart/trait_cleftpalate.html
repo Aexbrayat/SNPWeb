@@ -1,0 +1,89 @@
+{% extends "SNP/base.html" %}
+
+{% load staticfiles %}
+
+{% block head %}
+	<title>Cleft Palate</title>
+	<link href={% static 'SNP/tables.css' %} media="all" rel="stylesheet" type="text/css" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />	
+{% endblock %}
+
+{% block body %}
+	<header>
+		<a title="SnpWeb : The new powerfull database for SNPs" class="logo"></a>
+		<img src={% static 'SNP/logo.png' %} alt="Logo SnpWeb" class="logo">
+			
+		<div id="buttonbans"> 
+			<div id="home">
+				<input type="button" class="buttonban" value='Home' title="User homepage" onClick="javascript:document.location.href='http://127.0.0.1:8000/userhomepage/'"/>
+			</div>
+			<div id="allsnp">
+				<input type="button" class="buttonban" value='All Snp' title="View all SNPs informations" onClick="javascript:document.location.href='http://127.0.0.1:8000/allsnp/'" />
+			</div>
+			<div id="trait">	
+				<input type="button" class="buttonban" value='Trait' title="View all SNPs's trait" onClick="javascript:document.location.href='http://127.0.0.1:8000/trait/'" />
+			</div>
+			<div id="contact">	
+				<input type="button" class="buttonban" value='Contact' title="Contact us" onClick="javascript:document.location.href='http://127.0.0.1:8000/contactlog/'" />
+			</div>
+		</div>
+		<div id="loguser">
+			<div id="logout">
+				<input type="button" class="logout" value='Logout' title="Click to logout" onClick="javascript:document.location.href='http://127.0.0.1:8000/logoutchoice/'" />
+			</div>
+			<div id="username">
+				<h1>User connected : {{full_name}} </h1>
+				<div id="tictac"></div>
+			</div>
+		</div>
+	</header>
+	
+	<div id="table">
+		<h2>Here there are all the SNPs with the « Cleft Palate » trait.</h2>
+	
+		<div class="datagrid">
+			<table	align="center">
+				<tr>
+					<th>rsID</th>
+					<th>Trait</th>
+					<th>SNPType</th>
+					<th>Chromosom</th>
+					<th>Start Position</th>
+					<th>EndPosition</th>
+					<th>Chromosom:Start-End</th>
+					<th>Reference</th>
+				</tr>
+				{% for item in all_cleftpalate %}
+				<tr>
+					<td>{{ item.rsid }}</td>
+					<td>{{ item.trait }}</td>
+					<td>{{ item.type_snps}}</td>
+					<td>{{ item.chrom }}</td>
+					<td>{{ item.start }}</td>
+					<td>{{ item.end }}</td>
+					<td>{{ item.chrom_start_end }}</td>
+					<td>{{ item.reference }}</td>
+				</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+
+		function GetClock(){
+		var d=new Date();
+		var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds();
+		if(nmin<=9) nmin="0"+nmin
+		if(nsec<=9) nsec="0"+nsec;
+
+		document.getElementById('tictac').innerHTML=""+nhour+":"+nmin+":"+nsec+"";
+		}
+
+		window.onload=function(){
+		GetClock();
+		setInterval(GetClock,1000);
+		}
+	</script>	
+
+{% endblock %}

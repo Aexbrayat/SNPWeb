@@ -1,0 +1,37 @@
+{% extends "SNP/base.html" %}
+
+{% load staticfiles %}
+
+{% comment %}
+	Main page of SNP website.
+{% endcomment %}
+
+{% block head %}
+	<title>SNP</title>
+	<link href={% static 'SNP/home.css' %} media="all" rel="stylesheet" type="text/css" />
+	<header>
+		<a title="SnpWeb : The new powerfull database for SNPs" class="logo"> 
+		<img src={% static 'SNP/logo.png' %} alt="Logo SnpWeb" class="logo"><a/>
+			
+		<div id="buttonbans"> 
+			<div id="home">
+				<input type="button" class="buttonban" value='Home' title="General homepage" onClick="http://127.0.0.1:8000/userhomepage/'" />
+			</div>
+		</div>
+	</header>
+{% endblock %}
+
+{% block body %}
+
+<div id="fenetre_alert">
+<script>
+	
+ {
+       window.alert("Thank you for your message.You will be redirected to the user homepage");
+       document.location.href ="http://127.0.0.1:8000/userhomepage/";
+   }
+	
+</script>
+</div>
+
+{% endblock %}

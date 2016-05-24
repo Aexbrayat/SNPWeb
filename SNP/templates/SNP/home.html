@@ -1,0 +1,71 @@
+{% extends "SNP/base.html" %}
+
+{% load staticfiles %}
+
+{% block head %}
+	<title>SNP</title>
+	<link href={% static 'SNP/home.css' %} media="all" rel="stylesheet" type="text/css" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+{% endblock %}
+
+{% block body %}
+	<header>
+		<a title="SnpWeb : The new powerfull database for SNPs" class="logo"> </a> 
+		<img src={% static 'SNP/logo.png' %} alt="Logo SnpWeb" class="logo">
+			
+		<div id="buttonbans"> 
+			<div id="home">
+				<input type="button" class="buttonban" value='Home' title="General homepage" onClick="javascript:document.location.href='/'" />
+			</div>
+			<div id="allsnp">
+				<input type="button" class="buttonban" value='All Snp' title="View all SNPs informations" onClick="javascript:document.location.href='allsnp'" />
+			</div>
+			<div id="trait">	
+				<input type="button" class="buttonban" value='Trait' title="View all SNPs's trait" onClick="javascript:document.location.href='trait'" />
+			</div>
+			<div id="contact">	
+				<input type="button" class="buttonban" value='Contact' title="Contact us" onClick="javascript:document.location.href='contact'" />
+			</div>
+			<div id="register">	
+				<input type="button" class="signup" value='Sign up' title="Click here to sign up" onClick="javascript:document.location.href='register'" />
+			</div>
+		</div>
+		
+	</header>
+	<p>Welcome on SNPWeb.
+		<br> To access to the database, plese log in with the User section.
+		<br> If you are an andministrator, go to the Admin section.
+	</p>
+	<div id="buttons"> 
+		<div id="user">
+			<input type="button" class="button" value='User' title="Access to the user part" onClick="javascript:document.location.href='login'" />
+		</div>
+		<div id="admin">	
+			<input type="button" class="button" value='Admin' title="Access to the admin part" onClick="javascript:document.location.href='admin'" />
+		</div>
+	</div>
+	
+	<div id="tictac"></div>
+	
+	<script type="text/javascript">
+		tday=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+		tmonth=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+
+		function GetClock(){
+		var d=new Date();
+		var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getYear();
+		if(nyear<1000) nyear+=1900;
+		var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds();
+		if(nmin<=9) nmin="0"+nmin
+		if(nsec<=9) nsec="0"+nsec;
+
+		document.getElementById('tictac').innerHTML=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+"";
+		}
+
+		window.onload=function(){
+		GetClock();
+		setInterval(GetClock,1000);
+		}
+	</script>
+	
+{% endblock %}
